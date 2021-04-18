@@ -1,5 +1,6 @@
 'use strict';
 
+//DOM selection variables
 const videoDisp = document.querySelector('#video-back');
 const countryDisp = document.querySelector('#country');
 const temperatureDisp = document.querySelector('#temp');
@@ -110,6 +111,7 @@ const swapPrevIconColour = () => {
     iconColourDisp.classList.add(`colour-${retrievedWeather}`);
 }
 
+//initialization function
 const init = () => {
     getCurrLocation();
     getLocationWeather();
@@ -117,6 +119,7 @@ const init = () => {
 
 init();
 
+//confirm change button to get weather for selected country
 countriesBtn.addEventListener('click', (e) => {
     //prevents <input> element from refreshing page
     e.preventDefault();

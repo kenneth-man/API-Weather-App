@@ -77,7 +77,8 @@ const getLocationWeather = () => {
             const data = await response.json();
 
             retrievedWeather = data.weather[0].main;
-            retrievedTemperature = data.main.temp;
+            //api gives temperature in Kelvin; converting to degrees Celsius
+            retrievedTemperature = Math.round(data.main.temp - 273.15);
             retrievedCountry = data.sys.country;
             //console.log(retrievedWeather, retrievedTemperature, retrievedCountry);
             

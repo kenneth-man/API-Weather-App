@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="shortcut icon" type="image/png" href="res/icon.png"> -->
+
+        <title>#23 &mdash; weather app</title>
+    </head>
+
+    <body>
+        <main class="center">
+            <div class="video-cont">
+                <video autoplay muted loop id="video-back">
+                    <source src="./res/loading.mp4" type="video/mp4">
+                    Your browser doesn't support this video
+                </video>
+            </div>
+
+            <section class="column">
+                <div class="cont-row row">
+                    <h1 id="country">Getting your location...</h1>
+                
+                    <div class="temp-row row">
+                        <h1 id="temp">???</h1>
+
+                        <h2>°C</h2>
+                    </div>
+
+                    <svg class="icon-large transition pulse colour-Clear" id="icon-colour">
+                        <use href="./res/symbol-defs.svg#icon-light-up" class="icon"></use>
+                    </svg>
+                </div>
+
+                <form class="column">
+                    <label for="countries" class="form-row row">
+                        <svg class="icon-small">
+                            <use href="./res/symbol-defs.svg#icon-compass"></use>
+                        </svg>
+
+                        Choose a country:
+
+                        <span style="color: rgb(255,255,255,0.5); font-style: italic;">
+                            (Default weather shown is your current location)
+                        </span>
+                    </label>
+                    
+                    <select name="countries" id="countries" class="center transition rounded">
+                        <optgroup label="User">
+                            <option value="current">Current</option>
+                            <option disabled value="">__________</option>
+                        </optgroup>
+
+                        <optgroup label="Asia">
+                            <option value="China">China</option>
+                            <option value="India">India</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Korea (Republic of)">S.Korea</option>
+                            <option value="Viet Nam">Vietnam</option>
+                            <option disabled value="">__________</option>
+                        </optgroup>
+
+                        <optgroup label="Europe">
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Spain">Spain</option>
+                            <option value="United Kingdom">Great Britain</option>
+                            <option disabled value="">__________</option>
+                        </optgroup>
+
+                        <optgroup label="Africa">
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Dominican Republic">DR Congo</option>
+                            <option value="Tanzania">Tanzania</option>
+                        </optgroup>
+                    </select>
+
+                    <input type="submit" value="Confirm" class="center transition rounded" id="countries-confirm">
+                </form>
+            </section>
+        </main>
+  
+        <script type="text/javascript" src="./script.js"></script>
+    </body>
+</html>
